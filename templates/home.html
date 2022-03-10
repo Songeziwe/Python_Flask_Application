@@ -4,13 +4,12 @@
         <link rel="stylesheet" type="text/css" href="../static/navbar.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
         <nav class="nav-wrapper">
             <p class="followers-wrapper">
-                View your followers <a href="{{url_for('users', username=username)}}">here</a>
+                View your followers &#62; <a href="{{url_for('users', username=username)}}">Here</a>
             </p>
         </nav>
         <div class="content">
@@ -30,7 +29,7 @@
             {% if posts %}
                 <ul>
                     {% for post in posts %}
-                        <li>{{post['status']}}</li>
+                        <li class="post list-item">{{post['status']}}</li>
                     {% endfor %}
                 </ul>
             {% else %}
