@@ -10,16 +10,20 @@
     <div class="login-form">
       <form method='POST' action="">
         {{ form.hidden_tag() }}
-          <legend>Log In</legend>
+          <legend>Sign Up</legend>
           <div>
             {{ form.username.label(class="username-label") }}
             {{ form.username(class="username-inputField", placeholder="Username") }}
+          </div>
+          <div>
+            {{ form.password.label(class="password-label") }}
+            {{ form.password(class="password-inputField", placeholder="Password") }}
           </div>
           <div class="login-btn-wrapper">
             {{ form.submit(class="login-btn") }}
           </div>
         </form>
-        <p>Don't have account? <a href="{{url_for('signup')}}">Sign Up Now</a></p>
+        <p>Don't have account? <a href="{{url_for('login')}}">Log In</a></p>
     </div>
   </body>
-</html>
+</html
