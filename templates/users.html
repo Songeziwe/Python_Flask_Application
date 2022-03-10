@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/navbar.css"/>
     <title>Followers</title>
   </head>
   <body>
+    <nav class="nav-wrapper">
+      <p class="followers-wrapper">
+          Back to <a href="{{url_for('home', message=message)}}">Home</a>
+      </p>
+    </nav>
       {% if users[username] %}
         <p>Please find your followers {{ username }}:</p>
         <ul>
@@ -15,8 +21,7 @@
           {% endfor %}
         </ul>
         {% else %}
-          <p>You don't have followers yet!</p>
+          <p class="no-followers">You don't have followers yet!</p>
       {% endif %}
-    <a href="{{url_for('home', message=message)}}">Back to Home</a>
   </body>
 </html>

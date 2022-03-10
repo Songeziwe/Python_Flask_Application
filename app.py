@@ -31,7 +31,6 @@ def signup():
 
         with open('./users.json', 'r') as f:
             jsonFormat = f.read()                            # read from the file  
-           
             dataDectionary = json.loads(jsonFormat)          # convert to python dictionary
             dataDectionary[form.username.data] = []          # append to the dictionary
             jsonFormat = json.dumps(dataDectionary)          # convert the dictionary back to json format
@@ -58,7 +57,7 @@ def home():
     username = message['username']
     with open('./posts.json', 'r') as f:
         posts = f.read()
-    userPosts = json.loads(posts)[username]  
+    userPosts = json.loads(posts)[username]
     result = sorted(userPosts, key=lambda x: datetime.strptime(x['time'], '%Y-%m-%dT%H:%M:%SZ')) # sort user post in a chronological order
     return render_template('home.html', username = username, posts=result)
 

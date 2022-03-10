@@ -1,9 +1,20 @@
 <html>
     <head>
         <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="../static/navbar.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
-        {{message}}
+        <nav class="nav-wrapper">
+            <p class="followers-wrapper">
+                View your followers <a href="{{url_for('users', username=username)}}">here</a>
+            </p>
+        </nav>
+        <div class="content">
+            {{message}}
         <h1>Hello!
         {% if username %}
             {{ username }}
@@ -15,7 +26,7 @@
             <p>Posts can be found <a href="/posts">here</a></p>
             <p>Users and there follows can be found <a href="/users">here</a></p>
         {% else %}
-            <p>Your tweets:</p>
+            <p class="tweets-heading">Your tweets:</p>
             {% if posts %}
                 <ul>
                     {% for post in posts %}
@@ -23,10 +34,10 @@
                     {% endfor %}
                 </ul>
             {% else %}
-                <p>You don't have tweets yet!</p>
+                <p class="no-tweets">You don't have tweets yet!</p>
             {% endif %}
-            
-            <a href="{{url_for('users', username=username)}}">View your followers</a>
         {% endif %}
+        </div>
+        
     </body>
 </html>
