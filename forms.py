@@ -3,10 +3,10 @@ from wtforms import StringField, SubmitField, PasswordField
 
 class LoginForm(FlaskForm):
   username = StringField('Username')
-
+  password = PasswordField('Password')
   submit = SubmitField('Login')
 
 class SignupForm(FlaskForm):
   username = StringField('Username')
   password = PasswordField('Password')
-  submit = SubmitField('Login')
+  submit = SubmitField('Sign Up')
