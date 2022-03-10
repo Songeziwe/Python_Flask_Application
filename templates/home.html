@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Home</title>
-        <link rel="stylesheet" type="text/css" href="../static/navbar.css"/>
+        <link rel="stylesheet" type="text/css" href="../static/style.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -10,6 +10,7 @@
         <nav class="nav-wrapper">
             <p class="followers-wrapper">
                 View your followers &#62; <a href="{{url_for('users', username=username)}}">Here</a>
+                <a class = "signout-btn" href="{{url_for('login')}}">Sign Out</a>
             </p>
         </nav>
         <div class="content">
